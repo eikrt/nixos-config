@@ -20,15 +20,15 @@
     username = "eino";
     homeDirectory = "/home/eino";
     keyboard.layout = "fi";
-    packages = with pkgs; [ cowsay vim retroarch firefox icewm arandr pavucontrol sway wayfire mate.mate-terminal];
+    packages = with pkgs; [ cowsay vim retroarch firefox icewm arandr pavucontrol sway wayfire mate.mate-terminal nix-prefetch-git];
 
     file.".emacs.d" = {
       recursive = true;
 	    source = pkgs.fetchFromGitHub {
 	      owner = "eikrt";
 	      repo = "emacs.d";
-	      rev = "b9623be32a9fad0683f8ccaa1e5af887de0a85dd";
-	      sha256 = "1cjnn4c38v2cqagail7xiz30xzv5qjfr9472zqwb9yfl6521kaw5";
+	      rev = "5cd3430a7584435cf09366bc14d155b168715d53";
+	      sha256 = "13dmlqz66ii194f1m5pifkv810ncq4cxbzzbykcnfsl6plhpbs1x";
 	    };
    	};
 
