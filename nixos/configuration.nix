@@ -59,7 +59,7 @@
     # Enable the MATE Desktop Environment
     services.xserver.displayManager.lightdm.enable = false;
     #services.xserver.desktopManager.mate.enable = false;
-
+    services.xserver.windowManager.dwm.enable = true;
     # Configure keymap in X11
     services.xserver = {
       layout = "fi";

@@ -27,8 +27,8 @@
 	    source = pkgs.fetchFromGitHub {
 	      owner = "eikrt";
 	      repo = "emacs.d";
-	      rev = "147317fb1dc944fae61e1e429a49e5521f504758";
-	      sha256 = "0z347qwnkfz1wakywna6mvg3nsfh1shfni8mpgcwjdy1ys5c0iq6";
+	      rev = "ed96c86a87442d809c4022190fd8682c27f44587";
+	      sha256 = "1m9a8jirmywfijqxib4xdm7ppnxnn3b0h66dg8v4ym3is6k8bqqw";
 	    };
    	};
 
@@ -39,6 +39,7 @@
       shellAliases = {
         hs = "home-manager switch --flake .#eino@nixos";
         ns = "sudo nixos-rebuild switch --flake .#nixos";
+        pfe = "nix-prefetch-git git@github.com:eikrt/emacs.d";
       };
       bashrcExtra = "export NIX_CONFIG='experimental-features = nix-command flakes'";
     };
