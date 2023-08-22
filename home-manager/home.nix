@@ -27,8 +27,8 @@
 	    source = pkgs.fetchFromGitHub {
 	      owner = "eikrt";
 	      repo = "emacs.d";
-	      rev = "5cd3430a7584435cf09366bc14d155b168715d53";
-	      sha256 = "13dmlqz66ii194f1m5pifkv810ncq4cxbzzbykcnfsl6plhpbs1x";
+	      rev = "147317fb1dc944fae61e1e429a49e5521f504758";
+	      sha256 = "0z347qwnkfz1wakywna6mvg3nsfh1shfni8mpgcwjdy1ys5c0iq6";
 	    };
    	};
 
@@ -61,6 +61,7 @@
       input = {"*" = {xkb_layout= "fi";}; }; 
     };
   };
+  programs.waybar.enable = true;
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
