@@ -30,7 +30,7 @@
 	    #  rev = "ed96c86a87442d809c4022190fd8682c27f44587";
 	    #  sha256 = "1m9a8jirmywfijqxib4xdm7ppnxnn3b0h66dg8v4ym3is6k8bqqw";
 	    #};
-      source = /home/eino/repo/.emacs.d;
+            source = /home/eino/repo/.emacs.d;
    	};
 
   };
