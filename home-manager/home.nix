@@ -20,18 +20,18 @@
     username = "eino";
     homeDirectory = "/home/eino";
     keyboard.layout = "fi";
-    packages = with pkgs; [ cowsay vim retroarch firefox icewm arandr pavucontrol sway wayfire mate.mate-terminal nix-prefetch-git];
+    packages = with pkgs; [ cowsay vim retroarch firefox icewm arandr pavucontrol sway wayfire mate.mate-terminal nix-prefetch-git sbcl lilypond libiconv openssl pkgconfig sqlite rustup gcc zathura audacity sox lmms];
 
     file.".emacs.d" = {
       recursive = true;
-	    #source = pkgs.fetchFromGitHub {
-	    #  owner = "eikrt";
-	    #  repo = "emacs.d";
-	    #  rev = "ed96c86a87442d809c4022190fd8682c27f44587";
-	    #  sha256 = "1m9a8jirmywfijqxib4xdm7ppnxnn3b0h66dg8v4ym3is6k8bqqw";
-	    #};
-            source = /home/eino/repo/.emacs.d;
-   	};
+    	    source = pkgs.fetchFromGitHub {
+	      owner = "eikrt";
+	      repo = "emacs.d";
+	      rev = "a294c15609cb52e3c88c37d93da5eeeb2b5150c3";
+	      sha256 = "0ssy4wg4jvivnpx9jcg08gqpfaygxzwa2qf31i5n8yk60xlqz08m";
+	    };
+            #source = /home/eino/repo/.emacs.d;
+  	};
 
   };
   programs = {
@@ -48,9 +48,6 @@
       enable = true;
       userName = "Eino Korte";
       userEmail = "e.i.korte@gmail.com";
-    };
-	  emacs = {
-      enable = true;
     };
   };
   wayland.windowManager.sway = {

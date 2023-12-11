@@ -10,11 +10,12 @@
     #     ./users/eino.nix
     ];
     users.users.eino.isNormalUser = true;
-    users.users.eino.extraGroups = [ "networkmanager" "wheel" ];
+    users.users.eino.extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
+    virtualisation.virtualbox.host.enable = true;
+    virtualisation.virtualbox.guest.enable = true;
     security.polkit.enable = true;
     hardware.opengl.enable = true;
     # Setup keyfile
@@ -32,9 +33,13 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
+    virtualisation.docker.enable = true;
     # Enable network manager applet
     programs.nm-applet.enable = true;
+    # bluetooth
 
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = true;
     # Set your time zone.
     time.timeZone = "Europe/Helsinki";
 
@@ -57,7 +62,7 @@
     services.xserver.enable = true;
 
     # Enable the MATE Desktop Environment
-    services.xserver.displayManager.lightdm.enable = false;
+    services.xserver.displayManager.lightdm.enable = true;
     #services.xserver.desktopManager.mate.enable = false;
     services.xserver.windowManager.dwm.enable = true;
     # Configure keymap in X11
@@ -99,9 +104,18 @@
     nixpkgs.config.allowUnfree = true;  
     # List packages installed in system profile. To search, run:
     # $ nix search wget
+    nixpkgs.config.permittedInsecurePackages = [
+        "nodejs-14.21.3"
+        "openssl-1.1.1v"
+    ];
+
     environment.systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      vim
       wget
+      emacs29
+      nodejs_14
+      xterm
+      st
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
